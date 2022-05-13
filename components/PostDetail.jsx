@@ -53,7 +53,7 @@ const PostDetail = ( { post } ) => {
         </div>
         <div className="px-4 lg:px-0">
           <div className="mb-8 flex w-full items-center">
-            <div className="mr-8 hidden items-center items-center justify-center md:flex lg:mb-0 lg:w-auto">
+            <div className="mr-8 hidden items-center justify-center md:flex lg:mb-0 lg:w-auto">
               <img
                 alt={post.author.name}
                 height="30px"
@@ -68,7 +68,7 @@ const PostDetail = ( { post } ) => {
             <div className="font-medium text-gray-700">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="mr-2 inline h-6 w-6 text-pink-500"
+                className="mr-2 inline h-6 w-6 text-green-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

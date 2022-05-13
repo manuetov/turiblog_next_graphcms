@@ -28,7 +28,7 @@ function PostWidget({categories, slug}) {
                   <img
                      alt={post.title}
                      height='80px'
-                     widt='80px'
+                     widht='80px'
                      className='align-middle rounded-full'
                      src={post.featuredImage.url}
                   />
