@@ -1,16 +1,26 @@
-import React from 'react';
-import moment from 'moment';
+import React from 'react'
+import moment from 'moment'
 // import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/link'
 
-const FeaturedPostCard = ({ post }) => (
-  <div className="relative h-48">
-    <div className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-48" style={{ backgroundImage: `url('${post.featuredImage.url}')` }} />
-    <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-48" />
-    <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
-      <p className="text-white mb-4 text-shadow font-semibold text-xs">{moment(post.createdAt).format('MMM DD, YYYY')}</p>
-      <p className="text-white mb-4 text-shadow font-semibold text-lg text-center">{post.title}</p>
-      {/* <div className="flex items-center absolute bottom-5 w-full justify-center">
+const FeaturedPostCard = ({ post }) => {
+  // console.log(post)
+
+  return (
+    <div className="relative h-48">
+      <div
+        className="absolute inline-block h-48 w-full rounded-lg bg-cover bg-center bg-no-repeat shadow-md"
+        style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
+      />
+      <div className="absolute h-48 w-full rounded-lg bg-gradient-to-b from-gray-400 via-gray-700 to-black bg-center opacity-50" />
+      <div className="absolute flex h-full w-full flex-col items-center justify-center rounded-lg p-4">
+        <p className="text-shadow mb-4 text-xs font-semibold text-white">
+          {moment(post.createdAt).format('MMM DD, YYYY')}
+        </p>
+        <p className="text-shadow mb-4 text-center text-lg font-semibold text-white">
+          {post.title}
+        </p>
+        {/* <div className="flex items-center absolute bottom-5 w-full justify-center">
         <Image
           unoptimized
           alt={post.author.name}
@@ -21,9 +31,11 @@ const FeaturedPostCard = ({ post }) => (
         />
         <p className="inline align-middle text-white text-shadow ml-2 font-medium">{post.author.name}</p>
       </div> */}
+      </div>
+      <Link href={`/post/${post.slug}`}>
+        <span className="absolute h-full w-full cursor-pointer" />
+      </Link>
     </div>
-    <Link href={`/post/${post.slug}`}><span className="cursor-pointer absolute w-full h-full" /></Link>
-  </div>
-);
-
-export default FeaturedPostCard;
+  )
+}
+export default FeaturedPostCard
