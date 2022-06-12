@@ -3,8 +3,6 @@ import { FeaturedPosts } from '../sections/index';
 import { PostCard, Categories, PostWidget} from '../components/index'
 import { getPosts } from '../services' 
 
-
-
 export default function Home({ posts }) {
   // console.log(posts)
   return (
